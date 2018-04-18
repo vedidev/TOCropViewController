@@ -58,7 +58,7 @@
     self.image = image;
     
     //If profile picture, push onto the same navigation stack
-    if (self.croppingStyle == TOCropViewCroppingStyleCircular) {
+    if (self.croppingStyle == TOCropViewCroppingStyleRectangular) {
         [picker pushViewController:cropController animated:YES];
     }
     else { //otherwise dismiss, and then present from the main controller
@@ -113,7 +113,7 @@
     
     self.navigationItem.rightBarButtonItem.enabled = YES;
     
-    if (cropViewController.croppingStyle != TOCropViewCroppingStyleCircular) {
+    if (cropViewController.croppingStyle != TOCropViewCroppingStyleRectangular) {
         self.imageView.hidden = YES;
         [cropViewController dismissAnimatedFromParentViewController:self
                                                    withCroppedImage:image
@@ -181,7 +181,7 @@
     UIAlertAction *profileAction = [UIAlertAction actionWithTitle:NSLocalizedString(@"Make Profile Picture", @"")
                                            style:UIAlertActionStyleDefault
                                          handler:^(UIAlertAction *action) {
-                                             self.croppingStyle = TOCropViewCroppingStyleCircular;
+                                             self.croppingStyle = TOCropViewCroppingStyleRectangular;
                                              
                                              UIImagePickerController *profilePicker = [[UIImagePickerController alloc] init];
                                              profilePicker.modalPresentationStyle = UIModalPresentationPopover;
