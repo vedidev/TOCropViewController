@@ -27,7 +27,7 @@
 #define TOCROPVIEW_BACKGROUND_COLOR [UIColor colorWithWhite:0.12f alpha:1.0f]
 
 static const CGFloat kTOCropViewPadding = 14.0f;
-static const NSTimeInterval kTOCropTimerDuration = 0.8f;
+static const NSTimeInterval kTOCropTimerDuration = 0.0f;
 static const CGFloat kTOCropViewMinimumBoxSize = 42.0f;
 static const CGFloat kTOCropViewCircularPathRadius = 300.0f;
 
