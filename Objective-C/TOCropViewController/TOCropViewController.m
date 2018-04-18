@@ -905,7 +905,7 @@ static const CGFloat kTOCropViewControllerToolbarHeight = 44.0f;
 
     //If desired, when the user taps done, show an activity sheet
     if (self.showActivitySheetOnDone) {
-        TOActivityCroppedImageProvider *imageItem = [[TOActivityCroppedImageProvider alloc] initWithImage:self.image cropFrame:cropFrame angle:angle circular:(self.croppingStyle == TOCropViewCroppingStyleCircular) flipHorizontally:flipH flipVertically:flipV];
+        TOActivityCroppedImageProvider *imageItem = [[TOActivityCroppedImageProvider alloc] initWithImage:self.image cropFrame:cropFrame angle:angle rectangular:(self.croppingStyle == TOCropViewCroppingStyleCircular) flipHorizontally:flipH flipVertically:flipV];
         TOCroppedImageAttributes *attributes = [[TOCroppedImageAttributes alloc] initWithCroppedFrame:cropFrame angle:angle originalImageSize:self.image.size];
         
         NSMutableArray *activityItems = [@[imageItem, attributes] mutableCopy];
