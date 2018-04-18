@@ -28,7 +28,7 @@
 @property (nonatomic, strong, readwrite) UIImage *image;
 @property (nonatomic, assign, readwrite) CGRect cropFrame;
 @property (nonatomic, assign, readwrite) NSInteger angle;
-@property (nonatomic, assign, readwrite) BOOL circular;
+@property (nonatomic, assign, readwrite) BOOL rectangular;
 @property (nonatomic, assign, readwrite) NSInteger flipHorizontallyValue;
 @property (nonatomic, assign, readwrite) NSInteger flipVerticallyValue;
 
@@ -38,24 +38,24 @@
 
 @implementation TOActivityCroppedImageProvider
     
-- (instancetype)initWithImage:(UIImage *)image cropFrame:(CGRect)cropFrame angle:(NSInteger)angle circular:(BOOL)circular {
+- (instancetype)initWithImage:(UIImage *)image cropFrame:(CGRect)cropFrame angle:(NSInteger)angle rectangular:(BOOL)rectangular {
     if (self = [super initWithPlaceholderItem:[UIImage new]]) {
         _image = image;
         _cropFrame = cropFrame;
         _angle = angle;
-        _circular = circular;
+        _rectangular = rectangular;
     }
     
     return self;
 }
 
-- (instancetype)initWithImage:(UIImage *)image cropFrame:(CGRect)cropFrame angle:(NSInteger)angle circular:(BOOL)circular flipHorizontally:(NSInteger)flipH flipVertically:(NSInteger)flipV {
+- (instancetype)initWithImage:(UIImage *)image cropFrame:(CGRect)cropFrame angle:(NSInteger)angle rectangular:(BOOL)rectangular flipHorizontally:(NSInteger)flipH flipVertically:(NSInteger)flipV {
     
     if (self = [super initWithPlaceholderItem:[UIImage new]]) {
         _image = image;
         _cropFrame = cropFrame;
         _angle = angle;
-        _circular = circular;
+        _rectangular = rectangular;
         _flipHorizontallyValue = flipH;
         _flipVerticallyValue = flipV;
     }
@@ -83,7 +83,7 @@
         return self.croppedImage;
     }
     
-    UIImage *image = [self.image croppedImageWithFrame:self.cropFrame angle:self.angle circularClip:self.circular flipHorizontally:self.flipHorizontallyValue flipVertically:self.flipVerticallyValue];
+    UIImage *image = [self.image croppedImageWithFrame:self.cropFrame angle:self.angle circularClip:self.rectangular flipHorizontally:self.flipHorizontallyValue flipVertically:self.flipVerticallyValue];
     self.croppedImage = image;
     return self.croppedImage;
 }

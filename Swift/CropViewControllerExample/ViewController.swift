@@ -84,7 +84,7 @@ class ViewController: UIViewController, CropViewControllerDelegate, UIImagePicke
         
         self.navigationItem.rightBarButtonItem?.isEnabled = true
         
-        if cropViewController.croppingStyle != .circular {
+        if cropViewController.croppingStyle != .rectangular {
             imageView.isHidden = true
             
             cropViewController.dismissAnimatedFrom(self, withCroppedImage: image,
@@ -135,7 +135,7 @@ class ViewController: UIViewController, CropViewControllerDelegate, UIImagePicke
         }
         
         let profileAction = UIAlertAction(title: "Make Profile Picture", style: .default) { (action) in
-            self.croppingStyle = .circular
+            self.croppingStyle = .rectangular
             
             let imagePicker = UIImagePickerController()
             imagePicker.modalPresentationStyle = .popover
