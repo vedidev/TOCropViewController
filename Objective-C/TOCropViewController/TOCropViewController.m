@@ -114,7 +114,7 @@ static const CGFloat kTOCropViewControllerToolbarHeight = 44.0f;
     self.transitioningDelegate = self;
     self.view.backgroundColor = self.cropView.backgroundColor;
     
-    BOOL circularMode = (self.croppingStyle == TOCropViewCroppingStyleCircular);
+    BOOL circularMode = (self.croppingStyle == TOCropViewCroppingStyleRectangular);
 
     // Layout the views initially
     self.cropView.frame = [self frameForCropViewWithVerticalLayout:self.verticalLayout];
@@ -905,7 +905,7 @@ static const CGFloat kTOCropViewControllerToolbarHeight = 44.0f;
 
     //If desired, when the user taps done, show an activity sheet
     if (self.showActivitySheetOnDone) {
-        TOActivityCroppedImageProvider *imageItem = [[TOActivityCroppedImageProvider alloc] initWithImage:self.image cropFrame:cropFrame angle:angle rectangular:(self.croppingStyle == TOCropViewCroppingStyleCircular) flipHorizontally:flipH flipVertically:flipV];
+        TOActivityCroppedImageProvider *imageItem = [[TOActivityCroppedImageProvider alloc] initWithImage:self.image cropFrame:cropFrame angle:angle rectangular:(self.croppingStyle == TOCropViewCroppingStyleRectangular) flipHorizontally:flipH flipVertically:flipV];
         TOCroppedImageAttributes *attributes = [[TOCroppedImageAttributes alloc] initWithCroppedFrame:cropFrame angle:angle originalImageSize:self.image.size];
         
         NSMutableArray *activityItems = [@[imageItem, attributes] mutableCopy];
@@ -1008,7 +1008,7 @@ static const CGFloat kTOCropViewControllerToolbarHeight = 44.0f;
     BOOL isDidCropToImageCallbackAvailable = self.onDidCropToRect != nil;
 
     //If cropping circular and the circular generation delegate/block is implemented, call it
-    if (self.croppingStyle == TOCropViewCroppingStyleCircular && (isCircularImageDelegateAvailable || isCircularImageCallbackAvailable)) {
+    if (self.croppingStyle == TOCropViewCroppingStyleRectangular && (isCircularImageDelegateAvailable || isCircularImageCallbackAvailable)) {
         UIImage *image = [self.image croppedImageWithFrame:cropFrame angle:angle circularClip:YES flipHorizontally:flipH flipVertically:flipV];
         
         //Dispatch on the next run-loop so the animation isn't interuppted by the crop operation

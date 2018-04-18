@@ -135,7 +135,7 @@ typedef NS_ENUM(NSInteger, TOCropViewOverlayEdge) {
 {
     __weak typeof(self) weakSelf = self;
     
-    BOOL circularMode = (self.croppingStyle == TOCropViewCroppingStyleCircular);
+    BOOL circularMode = (self.croppingStyle == TOCropViewCroppingStyleRectangular);
     
     //View properties
     self.autoresizingMask = UIViewAutoresizingFlexibleHeight | UIViewAutoresizingFlexibleWidth;
@@ -1193,7 +1193,7 @@ typedef NS_ENUM(NSInteger, TOCropViewOverlayEdge) {
     CGFloat duration = editing ? 0.05f : 0.35f;
     CGFloat delay = editing? 0.0f : 0.35f;
     
-    if (self.croppingStyle == TOCropViewCroppingStyleCircular) {
+    if (self.croppingStyle == TOCropViewCroppingStyleRectangular) {
         delay = 0.0f;
     }
     
