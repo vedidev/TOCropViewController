@@ -24,7 +24,7 @@
 #import "TOCropOverlayView.h"
 #import "TOCropScrollView.h"
 
-#define TOCROPVIEW_BACKGROUND_COLOR [UIColor colorWithWhite:0.12f alpha:1.0f]
+#define TOCROPVIEW_BACKGROUND_COLOR [UIColor colorWithWhite:1.0f alpha:1.0f]
 
 static const CGFloat kTOCropViewPadding = 14.0f;
 static const NSTimeInterval kTOCropTimerDuration = 0.0f;
@@ -153,7 +153,7 @@ typedef NS_ENUM(NSInteger, TOCropViewOverlayEdge) {
     
     /* Dynamic animation blurring is only possible on iOS 9, however since the API was available on iOS 8,
      we'll need to manually check the system version to ensure that it's available. */
-    self.dynamicBlurEffect = ([[[UIDevice currentDevice] systemVersion] compare:@"9.0" options:NSNumericSearch] != NSOrderedAscending);
+    self.dynamicBlurEffect = NO;
     
     //Scroll View properties
     self.scrollView = [[TOCropScrollView alloc] initWithFrame:self.bounds];
@@ -192,8 +192,9 @@ typedef NS_ENUM(NSInteger, TOCropViewOverlayEdge) {
     
     //Translucency View
     if (NSClassFromString(@"UIVisualEffectView")) {
-        self.translucencyEffect = [UIBlurEffect effectWithStyle:UIBlurEffectStyleDark];
-        self.translucencyView = [[UIVisualEffectView alloc] initWithEffect:self.translucencyEffect];
+        self.translucencyEffect = [UIBlurEffect effectWithStyle:UIBlurEffectStyleExtraLight];
+        self.translucencyView = [UIView new];
+        self.translucencyView.backgroundColor = [UIColor whiteColor];
         self.translucencyView.frame = self.bounds;
     }
     else {
@@ -216,6 +217,13 @@ typedef NS_ENUM(NSInteger, TOCropViewOverlayEdge) {
     self.foregroundImageView = [[UIImageView alloc] initWithImage:self.image];
     self.foregroundImageView.layer.minificationFilter = kCAFilterTrilinear;
     [self.foregroundContainerView addSubview:self.foregroundImageView];
+    
+    float width = [[UIScreen mainScreen] bounds].size.width;
+    UILabel *label = [[UILabel alloc]initWithFrame:CGRectMake(16, 50, width - 16, 70)];
+    label.text = @"Pinch and move your image";
+    label.textAlignment = NSTextAlignmentCenter;
+    label.textColor = [UIColor colorWithRed:0.50 green:0.50 blue:0.50 alpha:1.0];
+    [self addSubview:label];
     
     // The following setup isn't needed during circular cropping
     if (circularMode) {
@@ -712,7 +720,7 @@ typedef NS_ENUM(NSInteger, TOCropViewOverlayEdge) {
         self.translucencyView.alpha = visible ? 1.0f : 0.0f;
     }
     else {
-        [(UIVisualEffectView *)self.translucencyView setEffect:visible ? self.translucencyEffect : nil];
+        // [(UIVisualEffectView *)self.translucencyView setEffect:visible ? self.translucencyEffect : nil];
     }
 }
 
