@@ -59,7 +59,7 @@
 
 - (void)setup {
     self.backgroundView = [[UIView alloc] initWithFrame:self.bounds];
-    self.backgroundView.backgroundColor = [UIColor colorWithRed:34/255.f green:37/255.f blue:45/255.f alpha:1.0];
+    self.backgroundView.backgroundColor = [UIColor whiteColor];
     [self addSubview:self.backgroundView];
     
     // On iOS 9, we can use the new layout features to determine whether we're in an 'Arabic' style language mode
@@ -81,86 +81,86 @@
         resourceBundle = classBundle;
     }
     
-    _doneTextButton = [UIButton buttonWithType:UIButtonTypeSystem];
-    [_doneTextButton setTitle: _doneTextButtonTitle ?
-        _doneTextButtonTitle : NSLocalizedStringFromTableInBundle(@"Done",
-                                                                  @"TOCropViewControllerLocalizable",
-                                                                  resourceBundle,
-                                                                  nil)
-                     forState:UIControlStateNormal];
-    //[_doneTextButton setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
-    [_doneTextButton.titleLabel setFont:[UIFont systemFontOfSize:17.0f]];
-    [_doneTextButton addTarget:self action:@selector(buttonTapped:) forControlEvents:UIControlEventTouchUpInside];
-    [_doneTextButton sizeToFit];
-    [self addSubview:_doneTextButton];
+    //    _doneTextButton = [UIButton buttonWithType:UIButtonTypeSystem];
+    //    [_doneTextButton setTitle: _doneTextButtonTitle ?
+    //        _doneTextButtonTitle : NSLocalizedStringFromTableInBundle(@"Done",
+    //                                                                  @"TOCropViewControllerLocalizable",
+    //                                                                  resourceBundle,
+    //                                                                  nil)
+    //                     forState:UIControlStateNormal];
+    //    //[_doneTextButton setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+    //    [_doneTextButton.titleLabel setFont:[UIFont systemFontOfSize:17.0f]];
+    //    [_doneTextButton addTarget:self action:@selector(buttonTapped:) forControlEvents:UIControlEventTouchUpInside];
+    //    [_doneTextButton sizeToFit];
+    //    [self addSubview:_doneTextButton];
+    //
+    //    _doneIconButton = [UIButton buttonWithType:UIButtonTypeSystem];
+    //    [_doneIconButton setImage:[TOCropToolbar doneImage] forState:UIControlStateNormal];
+    //    //[_doneIconButton setTintColor:[UIColor blackColor]];
+    //    [_doneIconButton addTarget:self action:@selector(buttonTapped:) forControlEvents:UIControlEventTouchUpInside];
+    //    [self addSubview:_doneIconButton];
+    //
+    //    _cancelTextButton = [UIButton buttonWithType:UIButtonTypeSystem];
+    //
+    //    [_cancelTextButton setTitle: _cancelTextButtonTitle ?
+    //        _cancelTextButtonTitle : NSLocalizedStringFromTableInBundle(@"Cancel",
+    //                                                                    @"TOCropViewControllerLocalizable",
+    //                                                                    resourceBundle,
+    //                                                                    nil)
+    //                       forState:UIControlStateNormal];
+    //    //[_cancelTextButton setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+    //    [_cancelTextButton.titleLabel setFont:[UIFont systemFontOfSize:17.0f]];
+    //    [_cancelTextButton addTarget:self action:@selector(buttonTapped:) forControlEvents:UIControlEventTouchUpInside];
+    //    [_cancelTextButton sizeToFit];
+    //    [self addSubview:_cancelTextButton];
+    //
+    //    _cancelIconButton = [UIButton buttonWithType:UIButtonTypeSystem];
+    //    [_cancelIconButton setImage:[TOCropToolbar cancelImage] forState:UIControlStateNormal];
+    //    [_cancelIconButton addTarget:self action:@selector(buttonTapped:) forControlEvents:UIControlEventTouchUpInside];
+    //    [self addSubview:_cancelIconButton];
     
-    _doneIconButton = [UIButton buttonWithType:UIButtonTypeSystem];
-    [_doneIconButton setImage:[TOCropToolbar doneImage] forState:UIControlStateNormal];
-    //[_doneIconButton setTintColor:[UIColor blackColor]];
-    [_doneIconButton addTarget:self action:@selector(buttonTapped:) forControlEvents:UIControlEventTouchUpInside];
-    [self addSubview:_doneIconButton];
+    //    _clampButton = [UIButton buttonWithType:UIButtonTypeSystem];
+    //    _clampButton.contentMode = UIViewContentModeCenter;
+    //    _clampButton.tintColor = [UIColor blackColor];
+    //    [_clampButton setImage:[TOCropToolbar clampImage] forState:UIControlStateNormal];
+    //    [_clampButton addTarget:self action:@selector(buttonTapped:) forControlEvents:UIControlEventTouchUpInside];
+    //    [self addSubview:_clampButton];
     
-    _cancelTextButton = [UIButton buttonWithType:UIButtonTypeSystem];
+    //    _rotateCounterclockwiseButton = [UIButton buttonWithType:UIButtonTypeSystem];
+    //    _rotateCounterclockwiseButton.contentMode = UIViewContentModeCenter;
+    //    _rotateCounterclockwiseButton.tintColor = [UIColor blackColor];
+    //    [_rotateCounterclockwiseButton setImage:[TOCropToolbar rotateCCWImage] forState:UIControlStateNormal];
+    //    [_rotateCounterclockwiseButton addTarget:self action:@selector(buttonTapped:) forControlEvents:UIControlEventTouchUpInside];
+    //    [self addSubview:_rotateCounterclockwiseButton];
+    //
+    //    _rotateClockwiseButton = [UIButton buttonWithType:UIButtonTypeSystem];
+    //    _rotateClockwiseButton.contentMode = UIViewContentModeCenter;
+    //    _rotateClockwiseButton.tintColor = [UIColor blackColor];
+    //    [_rotateClockwiseButton setImage:[TOCropToolbar rotateCWImage] forState:UIControlStateNormal];
+    //    [_rotateClockwiseButton addTarget:self action:@selector(buttonTapped:) forControlEvents:UIControlEventTouchUpInside];
+    //    [self addSubview:_rotateClockwiseButton];
     
-    [_cancelTextButton setTitle: _cancelTextButtonTitle ?
-        _cancelTextButtonTitle : NSLocalizedStringFromTableInBundle(@"Cancel",
-                                                                    @"TOCropViewControllerLocalizable",
-                                                                    resourceBundle,
-                                                                    nil)
-                       forState:UIControlStateNormal];
-    //[_cancelTextButton setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
-    [_cancelTextButton.titleLabel setFont:[UIFont systemFontOfSize:17.0f]];
-    [_cancelTextButton addTarget:self action:@selector(buttonTapped:) forControlEvents:UIControlEventTouchUpInside];
-    [_cancelTextButton sizeToFit];
-    [self addSubview:_cancelTextButton];
+    //    _resetButton = [UIButton buttonWithType:UIButtonTypeSystem];
+    //    _resetButton.contentMode = UIViewContentModeCenter;
+    //    _resetButton.tintColor = [UIColor blackColor];
+    //    _resetButton.enabled = NO;
+    //    [_resetButton setImage:[TOCropToolbar resetImage] forState:UIControlStateNormal];
+    //    [_resetButton addTarget:self action:@selector(buttonTapped:) forControlEvents:UIControlEventTouchUpInside];
+    //    [self addSubview:_resetButton];
     
-    _cancelIconButton = [UIButton buttonWithType:UIButtonTypeSystem];
-    [_cancelIconButton setImage:[TOCropToolbar cancelImage] forState:UIControlStateNormal];
-    [_cancelIconButton addTarget:self action:@selector(buttonTapped:) forControlEvents:UIControlEventTouchUpInside];
-    [self addSubview:_cancelIconButton];
+    //    _flipHorizontal = [UIButton buttonWithType:UIButtonTypeSystem];
+    //    _flipHorizontal.contentMode = UIViewContentModeCenter;
+    //    _flipHorizontal.tintColor = [UIColor blackColor];
+    //    [_flipHorizontal setImage:[TOCropToolbar flipHorizontal] forState:UIControlStateNormal];
+    //    [_flipHorizontal addTarget:self action:@selector(buttonTapped:) forControlEvents:UIControlEventTouchUpInside];
+    //    [self addSubview:_flipHorizontal];
     
-//    _clampButton = [UIButton buttonWithType:UIButtonTypeSystem];
-//    _clampButton.contentMode = UIViewContentModeCenter;
-//    _clampButton.tintColor = [UIColor blackColor];
-//    [_clampButton setImage:[TOCropToolbar clampImage] forState:UIControlStateNormal];
-//    [_clampButton addTarget:self action:@selector(buttonTapped:) forControlEvents:UIControlEventTouchUpInside];
-//    [self addSubview:_clampButton];
-    
-//    _rotateCounterclockwiseButton = [UIButton buttonWithType:UIButtonTypeSystem];
-//    _rotateCounterclockwiseButton.contentMode = UIViewContentModeCenter;
-//    _rotateCounterclockwiseButton.tintColor = [UIColor blackColor];
-//    [_rotateCounterclockwiseButton setImage:[TOCropToolbar rotateCCWImage] forState:UIControlStateNormal];
-//    [_rotateCounterclockwiseButton addTarget:self action:@selector(buttonTapped:) forControlEvents:UIControlEventTouchUpInside];
-//    [self addSubview:_rotateCounterclockwiseButton];
-//
-//    _rotateClockwiseButton = [UIButton buttonWithType:UIButtonTypeSystem];
-//    _rotateClockwiseButton.contentMode = UIViewContentModeCenter;
-//    _rotateClockwiseButton.tintColor = [UIColor blackColor];
-//    [_rotateClockwiseButton setImage:[TOCropToolbar rotateCWImage] forState:UIControlStateNormal];
-//    [_rotateClockwiseButton addTarget:self action:@selector(buttonTapped:) forControlEvents:UIControlEventTouchUpInside];
-//    [self addSubview:_rotateClockwiseButton];
-    
-//    _resetButton = [UIButton buttonWithType:UIButtonTypeSystem];
-//    _resetButton.contentMode = UIViewContentModeCenter;
-//    _resetButton.tintColor = [UIColor blackColor];
-//    _resetButton.enabled = NO;
-//    [_resetButton setImage:[TOCropToolbar resetImage] forState:UIControlStateNormal];
-//    [_resetButton addTarget:self action:@selector(buttonTapped:) forControlEvents:UIControlEventTouchUpInside];
-//    [self addSubview:_resetButton];
-    
-//    _flipHorizontal = [UIButton buttonWithType:UIButtonTypeSystem];
-//    _flipHorizontal.contentMode = UIViewContentModeCenter;
-//    _flipHorizontal.tintColor = [UIColor blackColor];
-//    [_flipHorizontal setImage:[TOCropToolbar flipHorizontal] forState:UIControlStateNormal];
-//    [_flipHorizontal addTarget:self action:@selector(buttonTapped:) forControlEvents:UIControlEventTouchUpInside];
-//    [self addSubview:_flipHorizontal];
-    
-//    _flipVertical = [UIButton buttonWithType:UIButtonTypeSystem];
-//    _flipVertical.contentMode = UIViewContentModeCenter;
-//    _flipVertical.tintColor = [UIColor blackColor];
-//    [_flipVertical setImage:[TOCropToolbar flipVertical] forState:UIControlStateNormal];
-//    [_flipVertical addTarget:self action:@selector(buttonTapped:) forControlEvents:UIControlEventTouchUpInside];
-//    [self addSubview:_flipVertical];
+    //    _flipVertical = [UIButton buttonWithType:UIButtonTypeSystem];
+    //    _flipVertical.contentMode = UIViewContentModeCenter;
+    //    _flipVertical.tintColor = [UIColor blackColor];
+    //    [_flipVertical setImage:[TOCropToolbar flipVertical] forState:UIControlStateNormal];
+    //    [_flipVertical addTarget:self action:@selector(buttonTapped:) forControlEvents:UIControlEventTouchUpInside];
+    //    [self addSubview:_flipVertical];
 }
 
 - (void)layoutSubviews
@@ -174,7 +174,7 @@
     self.cancelTextButton.hidden = (verticalLayout);
     self.doneIconButton.hidden   = (!verticalLayout);
     self.doneTextButton.hidden   = (verticalLayout);
-
+    
     CGRect frame = self.bounds;
     frame.origin.x -= self.backgroundViewOutsets.left;
     frame.size.width += self.backgroundViewOutsets.left;
@@ -201,7 +201,7 @@
         CGRect frame = CGRectZero;
         frame.size.height = 44.0f;
         frame.size.width = MIN(self.frame.size.width / 3.0, self.cancelTextButton.frame.size.width);
-
+        
         //If normal layout, place on the left side, else place on the right
         if (self.reverseContentLayout == NO) {
             frame.origin.x = insetPadding;
@@ -234,7 +234,7 @@
         }
         
         CGRect containerRect = CGRectIntegral((CGRect){x,frame.origin.y,width,44.0f});
-
+        
 #if TOCROPTOOLBAR_DEBUG_SHOWING_BUTTONS_CONTAINER_RECT
         containerView.frame = containerRect;
 #endif
@@ -242,19 +242,19 @@
         CGSize buttonSize = (CGSize){44.0f,44.0f};
         
         NSMutableArray *buttonsInOrderHorizontally = [NSMutableArray new];
-//        if (!self.rotateCounterclockwiseButtonHidden) {
-//            [buttonsInOrderHorizontally addObject:self.rotateCounterclockwiseButton];
-//        }
+        //        if (!self.rotateCounterclockwiseButtonHidden) {
+        //            [buttonsInOrderHorizontally addObject:self.rotateCounterclockwiseButton];
+        //        }
         
-//        [buttonsInOrderHorizontally addObject:self.resetButton];
+        //        [buttonsInOrderHorizontally addObject:self.resetButton];
         
-//        if (!self.clampButtonHidden) {
-//            [buttonsInOrderHorizontally addObject:self.clampButton];
-//        }
+        //        if (!self.clampButtonHidden) {
+        //            [buttonsInOrderHorizontally addObject:self.clampButton];
+        //        }
         
-//        if (!self.rotateClockwiseButtonHidden) {
-//            [buttonsInOrderHorizontally addObject:self.rotateClockwiseButton];
-//        }
+        //        if (!self.rotateClockwiseButtonHidden) {
+        //            [buttonsInOrderHorizontally addObject:self.rotateClockwiseButton];
+        //        }
         
         //[buttonsInOrderHorizontally addObject:self.flipHorizontal];
         //[buttonsInOrderHorizontally addObject:self.flipVertical];
@@ -282,19 +282,19 @@
         CGSize buttonSize = (CGSize){44.0f,44.0f};
         
         NSMutableArray *buttonsInOrderVertically = [NSMutableArray new];
-//        if (!self.rotateCounterclockwiseButtonHidden) {
-//            [buttonsInOrderVertically addObject:self.rotateCounterclockwiseButton];
-//        }
+        //        if (!self.rotateCounterclockwiseButtonHidden) {
+        //            [buttonsInOrderVertically addObject:self.rotateCounterclockwiseButton];
+        //        }
         
         [buttonsInOrderVertically addObject:self.resetButton];
         
-//        if (!self.clampButtonHidden) {
-//            [buttonsInOrderVertically addObject:self.clampButton];
-//        }
+        //        if (!self.clampButtonHidden) {
+        //            [buttonsInOrderVertically addObject:self.clampButton];
+        //        }
         
-//        if (!self.rotateClockwiseButtonHidden) {
-//            [buttonsInOrderVertically addObject:self.rotateClockwiseButton];
-//        }
+        //        if (!self.rotateClockwiseButtonHidden) {
+        //            [buttonsInOrderVertically addObject:self.rotateClockwiseButton];
+        //        }
         
         //[buttonsInOrderVertically addObject:self.flipHorizontal];
         //[buttonsInOrderVertically addObject:self.flipVertical];
@@ -560,8 +560,8 @@
         [polygonPath closePath];
         [UIColor.blackColor setFill];
         [polygonPath fill];
-
-
+        
+        
         resetImage = UIGraphicsGetImageFromCurrentImageContext();
     }
     UIGraphicsEndImageContext();
@@ -617,13 +617,13 @@
     NSURL *bundleURL = [[NSBundle bundleForClass:self.class] URLForResource:@"TOCropViewControllerBundle" withExtension:@"bundle"];
     UIImage *flipHImage;
     if (!bundleURL) {
-         flipHImage = [UIImage imageNamed:@"flipHorizontal"];
+        flipHImage = [UIImage imageNamed:@"flipHorizontal"];
     } else {
-    NSBundle *bundle = [NSBundle bundleWithURL:bundleURL];
-    NSString *imagePath = [bundle pathForResource:@"flipHorizontal" ofType:@"png"];
+        NSBundle *bundle = [NSBundle bundleWithURL:bundleURL];
+        NSString *imagePath = [bundle pathForResource:@"flipHorizontal" ofType:@"png"];
         flipHImage = [UIImage imageWithContentsOfFile:imagePath];
     }
-   
+    
     CGSize newSize = CGSizeMake(20.0, 20.0);
     UIGraphicsBeginImageContextWithOptions(newSize, NO, 0.0);
     [flipHImage drawInRect:CGRectMake(0, 0, newSize.width, newSize.height)];
@@ -638,8 +638,8 @@
     if (!bundleURL) {
         flipVImage = [UIImage imageNamed:@"flipVertical"];
     } else {
-    NSBundle *bundle = [NSBundle bundleWithURL:bundleURL];
-    NSString *imagePath = [bundle pathForResource:@"flipVertical" ofType:@"png"];
+        NSBundle *bundle = [NSBundle bundleWithURL:bundleURL];
+        NSString *imagePath = [bundle pathForResource:@"flipVertical" ofType:@"png"];
         flipVImage = [UIImage imageWithContentsOfFile:imagePath];
     }
     
@@ -676,3 +676,4 @@
 }
 
 @end
+
