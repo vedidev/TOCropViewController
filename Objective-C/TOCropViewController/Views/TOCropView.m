@@ -327,7 +327,7 @@ typedef NS_ENUM(NSInteger, TOCropViewOverlayEdge) {
     if (frame.size.width < scaledSize.width - FLT_EPSILON || frame.size.height < scaledSize.height - FLT_EPSILON) {
         CGPoint offset = CGPointZero;
         offset.x = -floorf((CGRectGetWidth(self.scrollView.frame) - scaledSize.width) * 0.5f);
-        offset.y = -floorf((CGRectGetHeight(self.scrollView.frame) - scaledSize.height + 68) * 0.5f);
+        offset.y = -floorf((CGRectGetHeight(self.scrollView.frame) - scaledSize.height + 64) * 0.5f);
         self.scrollView.contentOffset = offset;
     }
     
