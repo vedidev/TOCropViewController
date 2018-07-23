@@ -569,5 +569,6 @@ extension CropViewController {
                 delegate.cropViewController!(self, didFinishCancelled: finished)
             }
         }
+    }
 }
 
