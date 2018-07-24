@@ -116,6 +116,7 @@ static const CGFloat kTOCropViewControllerToolbarHeight = 44.0f;
                                                                  style:UIBarButtonItemStylePlain
                                                                 target:self
                                                                 action:@selector(doneButtonTapped:)];
+    doneItem.tintColor = [UIColor colorWithRed:(98.0 / 255.0) green: (0.0 / 255.0) blue: (169.0 / 255.0) alpha: 1];
     viewController.navigationItem.rightBarButtonItem = doneItem;
     viewController.navigationItem.leftBarButtonItem = cancelItem;
     viewController.navigationItem.title = @"Review and Adjust";
