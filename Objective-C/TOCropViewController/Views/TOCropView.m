@@ -162,6 +162,7 @@ typedef NS_ENUM(NSInteger, TOCropViewOverlayEdge) {
     self.scrollView.alwaysBounceVertical = YES;
     self.scrollView.showsHorizontalScrollIndicator = NO;
     self.scrollView.showsVerticalScrollIndicator = NO;
+    self.scrollView.decelerationRate = UIScrollViewDecelerationRateFast;
     self.scrollView.delegate = self;
     [self addSubview:self.scrollView];
     
