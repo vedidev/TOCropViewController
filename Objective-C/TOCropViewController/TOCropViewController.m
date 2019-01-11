@@ -116,10 +116,10 @@ static const CGFloat kTOCropViewControllerToolbarHeight = 44.0f;
                                                                  style:UIBarButtonItemStylePlain
                                                                 target:self
                                                                 action:@selector(doneButtonTapped:)];
-    doneItem.tintColor = [UIColor colorWithRed:(98.0 / 255.0) green: (0.0 / 255.0) blue: (169.0 / 255.0) alpha: 1];
+    doneItem.tintColor = [UIColor colorWithRed:(35.0 / 255.0) green: (178.0 / 255.0) blue: (47.0 / 255.0) alpha: 1];
     viewController.navigationItem.rightBarButtonItem = doneItem;
     viewController.navigationItem.leftBarButtonItem = cancelItem;
-    viewController.navigationItem.title = @"Review and Adjust";
+    viewController.navigationItem.title = @"Adjust";
 }
 
 - (void)viewDidLoad {
@@ -146,7 +146,7 @@ static const CGFloat kTOCropViewControllerToolbarHeight = 44.0f;
     self.toolbar.clampButtonTapped = ^{ [weakSelf showAspectRatioDialog]; };
     self.toolbar.rotateCounterclockwiseButtonTapped = ^{ [weakSelf rotateCropViewCounterclockwise]; };
     self.toolbar.rotateClockwiseButtonTapped = ^{ [weakSelf rotateCropViewClockwise]; };
-    [self.navigationItem setTitle:@"Review and Adjust"];
+    [self.navigationItem setTitle:@"Adjust"];
     UINavigationBar *navigationBar = [[UINavigationBar alloc]init];
     [self.view addSubview:navigationBar];
     //self.toolbar.flipHorizonyallyButtonTapped = ^{ [weakSelf flipHorizontal]; };
